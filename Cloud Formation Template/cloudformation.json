@@ -1,0 +1,164 @@
+{
+    "Metadata":{
+        "Label": {
+            "default": "Network Settings"
+        },
+        "Parameters": [
+            "VPCid"]
+
+    },
+    "Parameters" : {
+    "Vpcid":{
+        "Type": "AWS::EC2::VPC::Id",
+        "Description": "VPC id"
+    },
+      "ExistingSecurityGroup" : {
+        "Description" : "An existing security group ID (optional).",
+        "Default" : "NONE",
+        "Type" : "String",
+        "AllowedValues" : ["OpenEMR Cloud sec group", "NONE"]
+      },
+      "SubnetId": {
+        "Type": "AWS::EC2::Subnet::Id",
+        "Description": "Subnet in which to launch an EC2",
+        "Default": "subnet-0123ec12fd9af123b"
+    },
+"InstanceType": {
+    "Type": "String",
+    "Description": "EC2 instance for OpenEMR",
+    "Default": "t3.small",
+    "AllowedValues": [
+        "t3.small",
+        "t3.medium",
+        "t3.large",
+        "t3.xlarge",
+        "t3.2xlarge",
+        "m6a.large",
+        "m6a.xlarge",
+        "m6a.2xlarge",
+        "m6a.4xlarge",
+        "m6i.large",
+        "m6i.xlarge",
+        "m6i.2xlarge",
+        "m6i.4xlarge",
+        "c6a.large",
+        "c6a.xlarge",
+        "c6a.2xlarge",
+        "c6a.4xlarge",
+        "c6i.large",
+        "c6i.xlarge",
+        "c6i.2xlarge",
+        "c6i.4xlarge"
+    ]
+},
+"KeyName": {
+    "Description": "SSH Keypair to login to the instance",
+    "Type": "AWS::EC2::KeyPair::KeyName"
+}
+    },
+   
+    "Conditions" : {
+      "CreateNewSecurityGroup" : {"Fn::Equals" : [{"Ref" : "ExistingSecurityGroup"}, "NONE"] }
+    },
+  
+    "Resources" : {
+      "MyInstance" : {
+        "Type" : "AWS::EC2::Instance",
+          "Properties" : {
+            "ImageId" : "ami-08541e2ab875b6ef5",
+            "InstanceType": {
+                "Ref": "InstanceType"
+            },
+            "KeyName": {
+                "Ref": "KeyName"
+            },
+            "SubnetId": {
+                "Ref": "SubnetId"
+          },
+          "SecurityGroupIds":[{"Ref":"NewSecurityGroup"}]
+      }
+    },
+  
+      "NewSecurityGroup" : {
+        "Type" : "AWS::EC2::SecurityGroup",
+        "Condition" : "CreateNewSecurityGroup",
+        "Properties" : {
+          "GroupDescription" : "Enable HTTP access inbound and outbound ",
+          "VpcId": {"Ref": "Vpcid"}
+        }
+    },
+    "SecurityGroupIngress9300": {
+        "Type": "AWS::EC2::SecurityGroupIngress",
+        "Properties" :{
+            "Description": "Allow for port 9300",
+            "GroupId": {
+                "Ref":"NewSecurityGroup"},
+            "IpProtocol" : "tcp",
+            "FromPort" : 9300,
+            "ToPort" : 9300,
+            "CidrIp" : "0.0.0.0/0"
+        }
+    },
+    "SecurityGroupIngress80": {
+        "Type": "AWS::EC2::SecurityGroupIngress",
+        "Properties" :{
+            "Description": "Allow for port 80",
+            "GroupId": {
+                "Ref":"NewSecurityGroup"},
+            "IpProtocol" : "tcp",
+            "FromPort" : 80,
+            "ToPort" : 80,
+            "CidrIp" : "0.0.0.0/0"
+        }
+    },
+    "SecurityGroupIngress443": {
+        "Type": "AWS::EC2::SecurityGroupIngress",
+        "Properties" :{
+            "Description": "Allow for port 443",
+            "GroupId": {
+                "Ref":"NewSecurityGroup"},
+            "IpProtocol" : "tcp",
+            "FromPort" : 443,
+            "ToPort" : 443,
+            "CidrIp" : "0.0.0.0/0"
+        }
+    },
+    "SecurityGroupIngress22": {
+        "Type": "AWS::EC2::SecurityGroupIngress",
+        "Properties" :{
+            "Description": "Allow for port 22",
+            "GroupId": {
+                "Ref":"NewSecurityGroup"},
+            "IpProtocol" : "tcp",
+            "FromPort" : 22,
+            "ToPort" : 22,
+            "CidrIp" : "0.0.0.0/0"
+        }
+    },
+    "SecurityGroupIngress3389": {
+        "Type": "AWS::EC2::SecurityGroupIngress",
+        "Properties" :{
+            "Description": "Allow for port 3389",
+            "GroupId": {
+                "Ref":"NewSecurityGroup"},
+            "IpProtocol" : "tcp",
+            "FromPort" : 3389,
+            "ToPort" : 3389,
+            "CidrIp" : "0.0.0.0/0"
+        }
+    },
+
+         "SecurityGroupEgress": {
+            "Type":"AWS::EC2::SecurityGroupEgress",
+            "Properties":{
+                "Description":"Allow for egress/outbound rules",
+                "GroupId": {
+                    "Ref":"NewSecurityGroup"},
+                "IpProtocol" : "all",
+                "CidrIp" : "0.0.0.0/0"
+         }
+        }
+    },
+    "Outputs" : {
+    }
+}
