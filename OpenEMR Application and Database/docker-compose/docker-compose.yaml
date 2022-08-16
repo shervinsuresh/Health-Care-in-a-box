@@ -1,0 +1,23 @@
+version: '3.1'
+services:
+  openemr:
+    restart: always
+    image: openemr/openemr:6.1.0
+    ports:
+    - 80:80
+    - 443:443
+    volumes:
+    - logvolume01:/var/log
+    - sitevolume:/var/www/localhost/htdocs/openemr/sites
+    environment:
+      MYSQL_HOST: "add your enpoint between '' "
+      MYSQL_ROOT_USER: "fill in the user you set, without any quotes ex: admin" 
+      MYSQL_ROOT_PASS: " fill in the password use: '' ex:'pass123' "
+      MYSQL_USER: "fill in the user you set, without any quotes"
+      MYSQL_PASS: " fill in the password use: '' "
+      OE_USER: "fill in the user you set, without any quotes"
+      OE_PASS: " fill in the password use: '' "
+      OPENEMR_DOCKER_ENV_TAG: aws-standard
+volumes:
+  logvolume01: {}
+  sitevolume: {}
