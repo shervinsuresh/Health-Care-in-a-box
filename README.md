@@ -2,5 +2,5 @@
 Personal Commits to the Health Care in a box validation platform  
 
 ## File Structure  
-OpenEMR application and Database
+OpenEMR application and Database  
 FHIR Client 
