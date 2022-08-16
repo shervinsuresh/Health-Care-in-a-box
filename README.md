@@ -5,4 +5,4 @@
 ## File Structure  
 OpenEMR application and Database  
 Diagrams  
-
+Documentation  
