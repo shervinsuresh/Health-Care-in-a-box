@@ -75,7 +75,7 @@ The Sacramento Solutions Architect (SA) Interns worked with UC Davis Health to c
 
 ### **Architecture Diagram**
 
-[Image: Screen Shot 2022-08-04 at 3.18.21 PM.png]
+![architecture diagram](/Diagrams/Project%20Architecture.png)
 # 
 **Accomplishments and Deliverables ** 
 
