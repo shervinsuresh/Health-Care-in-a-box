@@ -35,18 +35,18 @@ This document provides a summary of the engagement conducted by the Solutions Ar
 
 ### **Key Contributors from AWS**
 
-|Name	|Title/Role	|Email	|	|
-|---	|---	|---	|---	|
-|Lynn Kreun	|Manager CAT	|lkreun@amazon.com	|	|
-|Tim Jones	|Solutions Architect CAT	|awstijon@amazon.com	|	|
-|Jon Sou	|Solutions Architect CAT	|jonsou@amazon.com	|	|
-|Shervin Suresh	|Solutions Architect Intern	|scshervi@amazon.com	|	|
-|Ayush Misra	|Solutions Architect Intern	|aymisra@amazon.com	|	|
-|Joseph Baroody	|Solutions Architect Intern	|jbaroody@amazon.com	|	|
-|Keonna Parrish	|Solutions Architect Intern	|keonnpar@amazon.com	|	|
-|Andrew Crabbe	|Senior Solutions Architect AMC	|crabbea@amazon.com	|	|
-|Kas Parthasarathy	|Senior Solutions Architect AMC	|kasparth@amazon.com	|	|
-|Qing Liu	|Senior Solutions Architect AMC	|qnamzn@amazon.com	|	|
+|Name	|Title/Role	|Email	|
+|---	|---	|---	|
+|Lynn Kreun	|Manager CAT	|lkreun@amazon.com	
+|Tim Jones	|Solutions Architect CAT	|awstijon@amazon.com	
+|Jon Sou	|Solutions Architect CAT	|jonsou@amazon.com	
+|Shervin Suresh	|Solutions Architect Intern	|scshervi@amazon.com	
+|Ayush Misra	|Solutions Architect Intern	|aymisra@amazon.com	
+|Joseph Baroody	|Solutions Architect Intern	|jbaroody@amazon.com	
+|Keonna Parrish	|Solutions Architect Intern	|keonnpar@amazon.com	
+|Andrew Crabbe	|Senior Solutions Architect AMC	|crabbea@amazon.com	
+|Kas Parthasarathy	|Senior Solutions Architect AMC	|kasparth@amazon.com	
+|Qing Liu	|Senior Solutions Architect AMC	|qnamzn@amazon.com	
 
 ## 
 **Summary of Objectives**
