@@ -21,9 +21,9 @@ sudo su
 cd openemr-devops/packages/standard/
 ```
 6. run ``` docker-compose down``` stops the running docker
-7. add the docker-compose.yaml file given at: (you might want to use ```nano docker-compose.yaml```  
+7. add the docker-compose.yaml file given at: (you might want to use ```nano docker-compose.yaml```)  
 [docker-compose.yaml](/OpenEMR%20Application%20and%20Database/OpenEMR%20AMIs/docker-compose/docker-compose.yaml)
-8. make sure you change the endpoint and credentials for the rds database you have created (if you want an example see:
+8. make sure you change the endpoint and credentials for the rds database you have created (if you want an example see:  
 [example docker-compose file](/OpenEMR%20Application%20and%20Database/OpenEMR%20AMIs/docker-compose/docker-compose-example.yaml)
 9. save the edited file
 10. run ```docker-compose up``` 
