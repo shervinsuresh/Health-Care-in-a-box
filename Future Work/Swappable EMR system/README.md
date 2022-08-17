@@ -1,0 +1,1 @@
+# Allowing for the Health Care in a Box Platform to be EMR system agnostic
