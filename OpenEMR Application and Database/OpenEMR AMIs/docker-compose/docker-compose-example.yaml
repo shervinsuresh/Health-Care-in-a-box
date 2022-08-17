@@ -1,0 +1,23 @@
+version: '3.1'
+services:
+  openemr:
+    restart: always
+    image: openemr/openemr:6.1.0
+    ports:
+    - 80:80
+    - 443:443
+    volumes:
+    - logvolume01:/var/log
+    - sitevolume:/var/www/localhost/htdocs/openemr/sites
+    environment:
+      MYSQL_HOST: 'davis-openemr.cmdaaxtpix2n.us-west-2.rds.amazonaws.com'
+      MYSQL_ROOT_USER: admin
+      MYSQL_ROOT_PASS: 'AWSDavis1'
+      MYSQL_USER: admin
+      MYSQL_PASS: 'AWSDavis1'
+      OE_USER: admin
+      OE_PASS: 'AWSDavis1'
+      OPENEMR_DOCKER_ENV_TAG: aws-standard
+volumes:
+  logvolume01: {}
+  sitevolume: {}
