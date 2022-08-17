@@ -10,4 +10,4 @@
 * Documentation  
   * Contains the Project Handoff and other key Documents   
 * Future Work  
- * Contains Future work broken down into individual parts  
+  * Contains Future work broken down into individual parts  
