@@ -76,8 +76,7 @@ The Sacramento Solutions Architect (SA) Interns worked with UC Davis Health to c
 ### **Architecture Diagram**
 
 ![architecture diagram](/Diagrams/Project%20Architecture.png)
-# 
-**Accomplishments and Deliverables ** 
+# Accomplishments and Deliverables 
 
 
 **Sprint 1**
@@ -141,7 +140,7 @@ We then can Introduce FHIR Works on AWS through postman in order to:
      4. Ability to get and post binary resources (Unstructured Data into s3 bucket using pre-signed URL)
      5. Ability to post a transaction bundle of 25 entries or less (FHIR Bulk Data)
 
-#  **Resources ** 
+#  Resources 
 
 * **WorldVistA Website: https://worldvista.org/AboutVistA**
 * **WorldVistA Docker: https://hub.docker.com/r/worldvista/worldvista-ehr/**
